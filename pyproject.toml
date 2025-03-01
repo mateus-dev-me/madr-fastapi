@@ -1,0 +1,65 @@
+[project]
+name = "madr-fastapi"
+version = "0.1.0"
+description = "O MADR (Meu Acervo Digital de Romances) é uma plataforma simplificada para gerenciamento de acervos digitais de livros, focada em romances. O projeto tem como objetivo oferecer uma forma prática e organizada de catalogar, visualizar e gerenciar livros digitais, permitindo que os usuários armazenem informações essenciais sobre suas obras favoritas."
+authors = [
+    {name = "mateus-dev-me",email = "mateusmartinsipu2@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "fastapi (>=0.115.10,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "pydantic (>=2.10.6,<3.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "pydantic-settings (>=2.8.1,<3.0.0)",
+    "alembic (>=1.14.1,<2.0.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.1.0"
+ruff = "^0.9.9"
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+testcontainers = "^4.9.1"
+factory-boy = "^3.3.3"
+faker = "^36.1.1"
+freezegun = "^1.5.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 79
+extend-exclude = ['migrations']
+
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = '-p no:warnings'
+
+
+[tool.coverage.run]
+omit = [
+    "**/migrations/*",
+    "**/tests/*",
+]
+
