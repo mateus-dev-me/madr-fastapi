@@ -3,7 +3,7 @@ from typing import Sequence
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from madr.models import User
+from madr.database.models import User
 
 
 def get_user_by_username_or_email(

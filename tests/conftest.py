@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, event
 from sqlalchemy.orm import Session
 from testcontainers.postgres import PostgresContainer
 
-from madr.models import table_registry
+from madr.database.models import table_registry
 from tests.factories import NovelistFactory, UserFactory
 
 

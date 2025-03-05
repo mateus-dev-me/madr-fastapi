@@ -3,7 +3,7 @@ from http import HTTPStatus
 from fastapi.exceptions import HTTPException
 from sqlalchemy.orm import Session
 
-from madr.models import User
+from madr.database.models import User
 from madr.repositories import user_repository
 
 

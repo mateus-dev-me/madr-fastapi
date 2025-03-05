@@ -3,7 +3,7 @@ import random
 import factory
 from faker import Faker
 
-from madr.models import Book, Novelist, User
+from madr.database.models import Book, Novelist, User
 
 fake = Faker()
 
