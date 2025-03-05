@@ -1,11 +1,12 @@
-from sqlalchemy import Session, create_engine
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 from madr.core.config import Settings
 
 engine = create_engine(Settings().DATABASE_URL)
 
 
-def get_session():
+def get_session():  # pragma: no cover
     """
     Gera uma sessão do SQLAlchemy e garante seu fechamento automático.
 
